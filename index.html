@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise Estratégica — Grupo Toniato</title>
+  <link rel="icon" href="grupo_toniato_logo.jpeg" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER MOBILE -->
+  <header class="mobile-header" id="mobileHeader">
+    <img src="fav-300x158.webp" alt="GT" class="mobile-logo">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <nav class="mobile-nav">
+      <a href="#hero"    class="nav-link" data-section="hero">Início</a>
+      <a href="#mercado" class="nav-link" data-section="mercado">O mercado agora</a>
+      <a href="#posicao" class="nav-link" data-section="posicao">A posição da GT</a>
+      <a href="#acoes"   class="nav-link" data-section="acoes">O que pode ser feito</a>
+      <a href="#visao"   class="nav-link" data-section="visao">Visão 2030</a>
+      <a href="#fontes"  class="nav-link" data-section="fontes">Fontes</a>
+    </nav>
+  </div>
+
+  <!-- SIDEBAR DESKTOP -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="fav-300x158.webp" alt="GT">
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#hero"    class="nav-link active" data-section="hero">Início</a>
+      <a href="#mercado" class="nav-link" data-section="mercado">O mercado agora</a>
+      <a href="#posicao" class="nav-link" data-section="posicao">A posição da GT</a>
+      <a href="#acoes"   class="nav-link" data-section="acoes">O que pode ser feito</a>
+      <a href="#visao"   class="nav-link" data-section="visao">Visão 2030</a>
+      <a href="#fontes"  class="nav-link" data-section="fontes">Fontes</a>
+    </nav>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- ============================
+         SEÇÃO 0: HERO
+         ============================ -->
+    <section id="hero" class="section-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Análise estratégica<br>
+          <span>Grupo Toniato</span>
+        </h1>
+        <p class="hero-subtitle">
+          Inteligência de mercado, posicionamento competitivo<br>
+          e oportunidades mapeadas para os próximos anos.
+        </p>
+        <a href="#intro" class="scroll-indicator" aria-label="Rolar para baixo">
+          <span>Role para explorar</span>
+          <div class="scroll-arrow"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 1: INTRODUÇÃO
+         ============================ -->
+    <section id="intro" class="section">
+      <div class="container">
+        <div class="intro-text animate-in">
+          <p>
+            O setor de logística está passando pela maior transformação
+            tecnológica das últimas décadas. A maioria das empresas ainda
+            não percebeu. Algumas estão se movimentando. Poucas já têm
+            as peças certas na mão.
+          </p>
+          <p>
+            Este documento reúne dados de mercado, inteligência competitiva
+            e um plano de ação construído a partir de pesquisa em mais de
+            15 fontes internacionais especializadas. O objetivo: mostrar
+            onde está o espaço, quem está se movendo e o que pode ser feito agora.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 2: O MERCADO AGORA
+         ============================ -->
+    <section id="mercado" class="section">
+      <div class="container">
+        <h2 class="section-title animate-in">O mercado agora</h2>
+
+        <!-- 2.1 Dado de impacto -->
+        <div class="impact-card animate-in">
+          <div class="impact-number">
+            <span class="count-up neon-blue" data-target="13" data-suffix="%">0%</span>
+          </div>
+          <p class="impact-desc">
+            dos operadores logísticos no mundo reportam resultado
+            financeiro concreto com o uso de inteligência artificial.
+            Os outros <strong class="neon-red">87%</strong> ainda estão testando ou nem começaram.
+          </p>
+          <p class="source-label">Pesquisa global com mais de 180 líderes do setor, 2026</p>
+        </div>
+
+        <!-- 2.2 Gráfico de linha: IA em logística -->
+        <div class="chart-block animate-in">
+          <h3 class="chart-title">Projeção de gastos globais com inteligência artificial aplicada a gestão de cadeia logística</h3>
+          <div class="chart-wrap">
+            <canvas id="chartIA" aria-label="Gráfico de linha: crescimento de IA em logística"></canvas>
+          </div>
+          <p class="source-label">Gartner, abril 2026</p>
+        </div>
+
+        <!-- 2.3 Gráfico de barras: manutenção preditiva -->
+        <div class="chart-block animate-in">
+          <h3 class="chart-title">Impacto documentado da manutenção preditiva em frotas</h3>
+          <div class="chart-wrap chart-wrap-bar">
+            <canvas id="chartManutencao" aria-label="Gráfico de barras: impacto da manutenção preditiva"></canvas>
+          </div>
+          <p class="source-label">Deloitte</p>
+        </div>
+
+        <!-- 2.4 Caso real -->
+        <div class="case-study animate-in">
+          <h3 class="chart-title">Caso real: custo da manutenção preventiva versus corretiva</h3>
+          <div class="case-cards">
+            <div class="case-card case-good" tabindex="0">
+              <div class="case-front">
+                <div class="case-value neon-green">US$ 2.400</div>
+                <p>custo do reparo preventivo em 3 caminhões com falha prevista</p>
+                <span class="tap-hint">Toque para detalhes</span>
+              </div>
+              <div class="case-back">
+                <p>Modelos de inteligência artificial detectaram degradação simultânea no sistema de refrigeração de 3 caminhões na mesma rota. Os veículos foram direcionados para manutenção preventiva durante parada programada.</p>
+              </div>
+            </div>
+            <div class="case-card case-bad" tabindex="0">
+              <div class="case-front">
+                <div class="case-value neon-red">US$ 187.000</div>
+                <p>custo projetado se a falha tivesse acontecido na estrada</p>
+                <span class="tap-hint">Toque para detalhes</span>
+              </div>
+              <div class="case-back">
+                <p>Guincho, carga parada, multas por atraso, danos secundários ao motor e perda de janela de entrega ao cliente.</p>
+              </div>
+            </div>
+          </div>
+          <p class="source-label">OxMaint, 2026</p>
+          <p class="highlight-stat">
+            Em outra operação, 80 caminhões monitorados geraram economia de US$ 1 milhão em 4 meses.
+            <span class="source-label">FleetRabbit, 2026</span>
+          </p>
+        </div>
+
+        <!-- 2.5 Donut: causas de atraso -->
+        <div class="chart-block animate-in">
+          <h3 class="chart-title">Principais causas de atraso na manutenção de frotas</h3>
+          <div class="chart-wrap chart-wrap-donut">
+            <canvas id="chartDonut" aria-label="Gráfico donut: causas de atraso na manutenção"></canvas>
+          </div>
+          <p class="source-label">Pesquisa com mais de 600 profissionais de gestão de frota, 2026</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 3: A POSIÇÃO DA GT
+         ============================ -->
+    <section id="posicao" class="section">
+      <div class="container">
+        <h2 class="section-title animate-in">Onde a GT já está na frente</h2>
+
+        <!-- 3.1 Narrativa com foto -->
+        <div class="narrative animate-in">
+          <div class="narrative-text">
+            <p>
+              Uma empresa fundada em 1974 no interior do Rio de Janeiro, que
+              começou transportando tintas e vernizes e se especializou em
+              produtos químicos perigosos. Hoje opera com mais de 700 veículos
+              em mais de 16 unidades pelo Brasil. Atende Bayer há mais de 20
+              anos, Evonik há mais de 30 e Kemira há 50.
+            </p>
+            <p>
+              Em 2017, fundou um braço de tecnologia que desenvolveu um agente
+              de inteligência artificial próprio, um sistema de gestão de
+              transporte com mais de 10 anos de maturidade e uma torre de
+              controle logístico com inteligência artificial. Tudo construído de dentro para fora.
+            </p>
+            <p>
+              Numa pesquisa global com mais de 180 líderes do setor (2026),
+              apenas 13% dos operadores logísticos no mundo declararam ter
+              resultado financeiro concreto com inteligência artificial. A GT está nesse grupo.
+            </p>
+          </div>
+          <div class="narrative-img">
+            <img src="assets/images/foto-antiga.jpg" alt="Transportes Toniato, anos 70" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 3.2 Matriz competitiva -->
+        <div class="matrix-section animate-in">
+          <h3 class="chart-title">Matriz competitiva</h3>
+          <div class="matrix-scroll">
+            <div class="matrix" role="table" aria-label="Matriz competitiva">
+
+              <div class="matrix-head" role="row">
+                <div class="mcell mlabel" role="columnheader"></div>
+                <div class="mcell mheader gt-col" role="columnheader">GT</div>
+                <div class="mcell mheader comp-col" role="columnheader" tabindex="0"
+                     data-tip="Maior operador logístico do Brasil. Receita superior a R$ 10 bilhões. Listado em bolsa. Opera em 9 países.">
+                  Operador A <span class="info-i" aria-hidden="true">i</span>
+                </div>
+                <div class="mcell mheader comp-col" role="columnheader" tabindex="0"
+                     data-tip="Líder em logística automotiva. Listado em bolsa. Braço de inovação com startups.">
+                  Operador B <span class="info-i" aria-hidden="true">i</span>
+                </div>
+                <div class="mcell mheader comp-col" role="columnheader" tabindex="0"
+                     data-tip="Frota de mais de 3.300 veículos. Especialista em petroquímico e agro.">
+                  Operador C <span class="info-i" aria-hidden="true">i</span>
+                </div>
+                <div class="mcell mheader comp-col" role="columnheader" tabindex="0"
+                     data-tip="Operador global. 22 mil funcionários no Brasil. Plano de dobrar operação em 5 anos.">
+                  Multinacional <span class="info-i" aria-hidden="true">i</span>
+                </div>
+              </div>
+
+              <div class="matrix-row" role="row">
+                <div class="mcell mlabel" role="cell">Inteligência artificial nativa no sistema de gestão</div>
+                <div class="mcell mval check" role="cell">✓</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval check" role="cell">✓</div>
+              </div>
+
+              <div class="matrix-row" role="row">
+                <div class="mcell mlabel" role="cell">Torre de controle com inteligência artificial</div>
+                <div class="mcell mval check" role="cell">✓</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval check" role="cell">✓</div>
+              </div>
+
+              <div class="matrix-row" role="row">
+                <div class="mcell mlabel" role="cell">Inteligência artificial integrada ao WhatsApp</div>
+                <div class="mcell mval check" role="cell">✓</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+              </div>
+
+              <div class="matrix-row" role="row">
+                <div class="mcell mlabel" role="cell">Tecnologia vendável a terceiros</div>
+                <div class="mcell mval check" role="cell">✓</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+              </div>
+
+              <div class="matrix-row" role="row">
+                <div class="mcell mlabel" role="cell">Foco 100% em químico como negócio principal</div>
+                <div class="mcell mval check" role="cell">✓</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+                <div class="mcell mval cross" role="cell">✗</div>
+              </div>
+
+            </div>
+          </div>
+          <div class="matrix-tip-card" id="matrixTip" aria-live="polite"></div>
+        </div>
+
+        <!-- 3.3 Reconhecimentos -->
+        <div class="awards-section animate-in">
+          <h3 class="chart-title">Reconhecimentos</h3>
+          <div class="awards-track">
+            <div class="award-card">
+              <div class="award-icon" aria-hidden="true">🏆</div>
+              <div class="award-name">Parceiro Ouro</div>
+              <div class="award-org">Bayer 2025</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon" aria-hidden="true">🏆</div>
+              <div class="award-name">Supply Chain Award</div>
+              <div class="award-org">Evonik 2025</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon" aria-hidden="true">🥇</div>
+              <div class="award-name">Armazém Seguro 1° lugar</div>
+              <div class="award-org">Corteva 2024</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon" aria-hidden="true">🏆</div>
+              <div class="award-name">Excelência em transporte químico</div>
+              <div class="award-org">Abiquim 2026</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon" aria-hidden="true">🏆</div>
+              <div class="award-name">Finalista executivo do ano</div>
+              <div class="award-org">Prêmio nacional de logística 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3.4 Ecossistema tecnológico -->
+        <div class="ecosystem animate-in">
+          <h3 class="chart-title">Ecossistema tecnológico</h3>
+          <div class="eco-diagram">
+            <div class="eco-center">
+              <span>GT Soluções<br>Logísticas</span>
+            </div>
+            <div class="eco-nodes">
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>Inteligência artificial conversacional<br><small>110 idiomas, integrada ao WhatsApp</small></p>
+              </div>
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>Sistema de gestão de transporte<br><small>9 módulos, 10+ anos de maturidade</small></p>
+              </div>
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>Torre de controle logístico<br><small>gestão de exceções por inteligência artificial</small></p>
+              </div>
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>Auditoria de fretes com inteligência artificial</p>
+              </div>
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>Plataforma de emissões<br><small>protocolo GHG</small></p>
+              </div>
+              <div class="eco-node">
+                <div class="eco-dot"></div>
+                <p>13 agentes de inteligência artificial<br><small>personalizáveis por cliente</small></p>
+              </div>
+            </div>
+            <div class="eco-partners">
+              Parceiros de infraestrutura: AWS, Google Cloud, Microsoft
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 4: O QUE PODE SER FEITO
+         ============================ -->
+    <section id="acoes" class="section">
+      <div class="container">
+        <h2 class="section-title animate-in">O que pode ser feito hoje</h2>
+
+        <!-- 4.1 Comunicação motorista -->
+        <div class="action-block animate-in">
+          <h3 class="block-subtitle">Comunicação do motorista com inteligência artificial</h3>
+          <p>
+            O motorista é o sensor mais importante da operação. Se ele percebe
+            um problema no caminhão (barulho, vazamento, desgaste), na maioria
+            das vezes só consegue reportar quando chega ao destino. Com um canal
+            de inteligência artificial integrado ao WhatsApp, ele envia uma foto
+            e uma descrição. A inteligência artificial classifica a urgência, identifica o tipo de
+            problema e aciona o mecânico mais próximo da rota se for grave. Se
+            não for, agenda o reparo no destino com a peça já solicitada. O tempo
+            entre "percebeu o problema" e "alguém foi acionado" cai de horas
+            para minutos.
+          </p>
+          <div class="inline-stat">
+            <span class="neon-blue stat-num">31,5%</span>
+            <span>dos atrasos em manutenção de frota são causados por falhas de comunicação entre o motorista e a base.</span>
+            <p class="source-label">Pesquisa com 600+ profissionais, 2026</p>
+          </div>
+        </div>
+
+        <!-- 4.2 Antes vs Depois -->
+        <div class="before-after animate-in">
+          <h3 class="block-subtitle">Manutenção preditiva</h3>
+          <div class="ba-grid">
+            <div class="ba-col ba-before">
+              <div class="ba-label neon-red">Antes</div>
+              <div class="ba-flow">
+                <div class="ba-step">Caminhão quebra</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Guincho acionado</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Entrega atrasada</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Cliente insatisfeito</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Custo alto</div>
+              </div>
+            </div>
+            <div class="ba-col ba-after">
+              <div class="ba-label neon-green">Depois</div>
+              <div class="ba-flow">
+                <div class="ba-step">Sistema prevê falha</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Reparo agendado</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Peça já disponível</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Frota reorganizada</div>
+                <div class="ba-arrow" aria-hidden="true">→</div>
+                <div class="ba-step">Zero impacto na entrega</div>
+              </div>
+            </div>
+          </div>
+          <p>
+            Com mais de 700 veículos operando (a maioria com sensores embarcados
+            de fábrica), já existe uma base de dados capaz de alimentar modelos
+            de previsão de falhas. Temperatura do motor, pressão do óleo,
+            voltagem da bateria, desgaste de freios. O sistema identifica padrões
+            semanas antes da falha acontecer e aciona a cadeia de manutenção:
+            solicita a peça, reserva o mecânico, reorganiza a frota para que o
+            caminhão parado não comprometa nenhuma entrega.
+          </p>
+          <div class="highlight-box">
+            Nenhum concorrente nacional no setor oferece manutenção preditiva com inteligência artificial integrada ao sistema de gestão de transporte.
+          </div>
+        </div>
+
+        <!-- 4.3 O time -->
+        <div class="team-block animate-in">
+          <div class="team-hero" style="background-image: url('assets/images/time-celebrando.jpg')">
+            <div class="team-overlay"></div>
+            <div class="team-text">
+              <p>
+                Uma empresa com mais de mil colaboradores, muitos com anos e até
+                décadas na mesma operação. Eles conhecem cada detalhe, cada problema
+                recorrente, cada solução que nunca foi implementada porque não
+                existia a ferramenta.
+              </p>
+              <p>
+                Não se trata de substituir ninguém. Se trata de dar a essas pessoas
+                a capacidade de resolver o que elas sempre souberam que precisava
+                ser resolvido. Problemas empurrados há anos dentro de qualquer empresa
+                grande do setor agora podem ser endereçados pelo próprio time que
+                convive com eles todo dia.
+              </p>
+              <p>
+                Inteligência artificial não traz o conhecimento. O conhecimento já
+                existe. A inteligência artificial destrava ele.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="chart-title" style="margin-top: 2.5rem;">Vagas identificadas durante a pesquisa</h3>
+          <div class="jobs-grid">
+            <div class="job-card"><span class="job-role">Assistente Operacional</span><span class="job-loc">Paulínia, SP</span></div>
+            <div class="job-card"><span class="job-role">Analista de Faturamento</span><span class="job-loc">Santos, SP</span></div>
+            <div class="job-card"><span class="job-role">Assistente Operacional</span><span class="job-loc">Rio de Janeiro</span></div>
+            <div class="job-card"><span class="job-role">Assistente de Expedição</span><span class="job-loc">Paulínia, SP</span></div>
+            <div class="job-card"><span class="job-role">Assistente de Logística</span><span class="job-loc">Guarulhos, SP</span></div>
+            <div class="job-card"><span class="job-role">Técnico de Segurança</span><span class="job-loc">Paulínia, SP</span></div>
+            <div class="job-card"><span class="job-role">Assistente Operacional</span><span class="job-loc">Viana, ES</span></div>
+            <div class="job-card"><span class="job-role">Líder de Portaria</span><span class="job-loc">Paulínia, SP</span></div>
+          </div>
+          <p class="extra-note">
+            Vagas reais identificadas durante a pesquisa. Funções operacionais
+            em unidades que estão crescendo. Cada uma delas representa um
+            processo que pode ter sua produtividade amplificada. Crescer a
+            operação sem multiplicar o custo operacional na mesma proporção.
+            Isso é escalar de verdade.
+          </p>
+        </div>
+
+        <!-- 4.4 Posicionamento -->
+        <div class="impact-card animate-in">
+          <div class="impact-number">
+            <span class="count-up neon-blue" data-target="40" data-suffix="%+">0%</span>
+          </div>
+          <p class="impact-desc">
+            dos contratantes de logística já consideram o uso de
+            inteligência artificial como critério na hora de escolher um operador.
+            Se a empresa já tem a tecnologia mas não comunica, o mercado não sabe.
+          </p>
+          <p class="source-label">Pesquisa global com 180+ líderes, 2026</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 5: VISÃO 2030
+         ============================ -->
+    <section id="visao" class="section">
+      <div class="container">
+        <h2 class="section-title animate-in">Visão 2030</h2>
+
+        <!-- 5.1 Brasil -->
+        <div class="vision-row animate-in">
+          <div class="vision-img">
+            <img src="assets/images/caminhao-scania.jpg" alt="Caminhão Scania GT na estrada" loading="lazy">
+          </div>
+          <div class="vision-text">
+            <h3 class="block-subtitle">Primeiro, o Brasil</h3>
+            <p>
+              A expansão nacional já está em curso. Novos centros de distribuição
+              no Centro-Oeste (Campo Verde, Dourados, Rio Verde), presença
+              identificada em Santos e Viana. O plano é presença nacional até 2030.
+            </p>
+            <p>
+              Quando a operação nacional se consolida e a tecnologia prova seu
+              valor em cada nova unidade, o próximo passo deixa de ser ambição
+              e passa a ser consequência.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5.2 Paraguai -->
+        <div class="vision-row vision-row-rev animate-in">
+          <div class="vision-text">
+            <h3 class="block-subtitle">Paraguai</h3>
+            <p>
+              O Paraguai produz mais de 10 milhões de toneladas de soja por ano.
+              Para cada hectare plantado, são necessárias 2 a 3 aplicações de
+              agroquímicos. Quem fornece esses agroquímicos? Bayer, BASF, Corteva,
+              Syngenta. Os mesmos clientes que a GT atende no Brasil há décadas.
+            </p>
+            <p>
+              Não existe no Paraguai um operador logístico especializado em
+              transporte de cargas perigosas com o nível de tecnologia e
+              conformidade que essas multinacionais exigem. A infraestrutura
+              local é precária: o processamento industrial opera entre 50 e 80%
+              da capacidade por ineficiências logísticas.
+            </p>
+            <p>
+              A GT não precisa prospectar clientes no Paraguai. Precisa acompanhar
+              os que já tem.
+            </p>
+            <p>
+              O maior operador logístico do Brasil já opera lá, mas como
+              generalista. A GT entra como especialista. E quando a GT opera com
+              sua tecnologia, os concorrentes locais veem. E a empresa de tecnologia vende para o
+              ecossistema que se forma ao redor.
+            </p>
+            <p>
+              O complexo sojeiro paraguaio gerou US$ 3,57 bilhões em exportações
+              em 2025. O sistema de gestão de transporte e a inteligência artificial da GT já operam
+              em espanhol. São 110 idiomas disponíveis.
+            </p>
+          </div>
+          <div class="chart-block" style="flex:1; min-width:280px;">
+            <h3 class="chart-title">Produção de soja no Paraguai (milhões de toneladas)</h3>
+            <div class="chart-wrap">
+              <canvas id="chartParaguai" aria-label="Gráfico de linha: produção de soja no Paraguai"></canvas>
+            </div>
+            <p class="source-label">USDA, OECD</p>
+          </div>
+        </div>
+
+        <!-- 5.3 Boston e Houston -->
+        <div class="vision-row animate-in">
+          <div class="chart-block" style="flex:1; min-width:280px;">
+            <h3 class="chart-title">O mercado global de inteligência artificial em logística (US$ bilhões)</h3>
+            <div class="chart-wrap">
+              <canvas id="chartIA2" aria-label="Gráfico de linha: mercado de IA em logística"></canvas>
+            </div>
+            <p class="source-label">Gartner, abril 2026</p>
+          </div>
+          <div class="vision-text">
+            <h3 class="block-subtitle">Boston e Houston</h3>
+            <p>
+              O comércio químico internacional cresceu 18% entre 2022 e 2024.
+              Nos Estados Unidos, 92% dos grandes contratantes de logística
+              química já operam em plataformas digitais. Mas os transportadores
+              de médio porte, especialmente os especializados em cargas perigosas,
+              ficaram para trás.
+            </p>
+            <p>
+              Não existe no mercado americano um sistema de gestão de transporte
+              construído especificamente para cargas perigosas com inteligência
+              artificial nativa. Esse é o espaço.
+            </p>
+            <p>
+              <strong class="neon-blue">Boston:</strong> sede de desenvolvimento e inovação. O maior ecossistema
+              de biotecnologia e farmacêutico do mundo. Acesso a talento de inteligência artificial
+              nas melhores universidades do planeta. Investidores ativos no setor. Uma sede em Boston posiciona
+              a empresa de tecnologia como empresa de tecnologia, ponto.
+            </p>
+            <p>
+              <strong class="neon-blue">Houston:</strong> base comercial. A capital química dos Estados Unidos.
+              Onde estão as refinarias, as petroquímicas, os transportadores
+              de cargas perigosas e os clientes que a GT já conhece pelo nome:
+              Bayer, BASF, Dow, Corteva.
+            </p>
+            <p>
+              O desenvolvimento acontece no Brasil (custo em real), a receita
+              vem dos Estados Unidos (em dólar).
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================
+         SEÇÃO 6: FONTES
+         ============================ -->
+    <section id="fontes" class="section sources-section">
+      <div class="container">
+        <h2 class="section-title animate-in">Fontes</h2>
+        <div class="sources-grid animate-in">
+          <div class="sources-col">
+            <h3>Pesquisas de mercado</h3>
+            <ul>
+              <li>BCG + Alpega, pesquisa com 180+ líderes (março 2026)</li>
+              <li>Gartner, previsão de inteligência artificial em cadeia logística (abril 2026)</li>
+              <li>MarketsandMarkets, automação logística global (maio 2026)</li>
+              <li>Capgemini Research Institute (2025)</li>
+            </ul>
+          </div>
+          <div class="sources-col">
+            <h3>Dados de frota e operações</h3>
+            <ul>
+              <li>Fleetio, pesquisa com 600+ profissionais (2026)</li>
+              <li>Deloitte, manutenção preditiva</li>
+              <li>OxMaint, FleetRabbit, Intangles (2026)</li>
+              <li>Genial Investimentos, análise setorial</li>
+            </ul>
+          </div>
+          <div class="sources-col">
+            <h3>Dados internacionais e da empresa</h3>
+            <ul>
+              <li>USDA Foreign Agricultural Service (Paraguai)</li>
+              <li>OECD, CAPPRO, Mordor Intelligence</li>
+              <li>Intel Market Research (logística química, EUA)</li>
+              <li>grupotoniato.com.br, gs.com.vc, oisara.ai, webcol.systems</li>
+              <li>LinkedIn, Econodata, Receita Federal</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="page-footer animate-in">
+          <p>Pesquisa realizada em maio de 2026</p>
+          <img src="assets/images/logo-grupo-toniato.jpeg" alt="Grupo Toniato">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

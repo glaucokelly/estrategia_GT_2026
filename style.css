@@ -237,7 +237,7 @@ ul  { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('assets/images/time-celebrando.jpg');
+  background-image: url('assets/images/banner.webp');
   background-size: cover;
   background-position: center right;
   transform: scale(1.05);

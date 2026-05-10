@@ -1029,22 +1029,32 @@ ul  { list-style: none; }
   .sidebar       { display: none; }
   .mobile-header { display: flex; }
 
-  /* Matriz competitiva mobile */
-  .matrix { min-width: 480px; }
+  /* Matriz competitiva mobile — table layout garante alinhamento de colunas */
+  .matrix {
+    display: table;
+    width: max-content;
+    min-width: unset;
+    border-collapse: collapse;
+  }
 
   .matrix-head,
   .matrix-row {
-    grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+    display: table-row;
   }
 
   .mcell {
-    padding: 0.6rem 0.4rem;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0.6rem 0.5rem;
     font-size: 0.72rem;
   }
 
-  .mheader { font-size: 0.68rem; }
+  .mlabel { min-width: 150px; max-width: 180px; }
 
-  .mval { font-size: 0.95rem; }
+  .mheader,
+  .mval { min-width: 54px; text-align: center; font-size: 0.68rem; }
+
+  .mval { font-size: 0.9rem; }
 
   .main-content { margin-left: 0; padding-top: var(--header-h); }
 

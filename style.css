@@ -1029,6 +1029,23 @@ ul  { list-style: none; }
   .sidebar       { display: none; }
   .mobile-header { display: flex; }
 
+  /* Matriz competitiva mobile */
+  .matrix { min-width: 480px; }
+
+  .matrix-head,
+  .matrix-row {
+    grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+  }
+
+  .mcell {
+    padding: 0.6rem 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .mheader { font-size: 0.68rem; }
+
+  .mval { font-size: 0.95rem; }
+
   .main-content { margin-left: 0; padding-top: var(--header-h); }
 
   .container { padding: 0 1.25rem; }

@@ -774,10 +774,43 @@ ul  { list-style: none; }
 
 .eco-partners {
   text-align: center;
-  font-size: 0.75rem;
-  color: var(--text-muted);
   border-top: 1px solid var(--border);
   padding-top: 1.25rem;
+}
+
+.eco-partners-label {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.eco-partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.eco-partners-logos img {
+  height: 32px;
+  width: auto;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.eco-partners-logos img:hover { opacity: 1; }
+
+@media (max-width: 768px) {
+  .eco-partners-logos img { height: 24px; }
+  .eco-partners-logos { gap: 1.25rem; }
 }
 
 /* ==============================
